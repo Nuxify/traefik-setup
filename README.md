@@ -10,9 +10,7 @@ Cloud-native networking stack that just works.
 
 3. Create `.env` (from .env.example) and provide correct values
 
-4. For `AUTH_HTPASSWD`, generate here: https://www.web2generators.com/apache-tools/htpasswd-generator (default is user=sudo, password=2m4Bf48k2JbO5bnh26uwoeXa0dZ)
-
-   > To generate a new password, run `echo $(htpasswd -nb <username> <password>)`
+4. For `AUTH_HTPASSWD`, run `echo $(htpasswd -nb <username> <password>)` (default is user=sudo, password=2m4Bf48k2JbO5bnh26uwoeXa0dZ)
 
 5. Create the docker network: `docker network create proxy`
 
