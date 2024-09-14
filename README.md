@@ -5,7 +5,7 @@ Cloud-native networking stack that just works.
 1. Clone https://github.com/Nuxify/traefik-setup.git
 2. Create `./data/acme.json` and add permission (chmod 600)
 3. Create `.env` (from .env.example) and provide correct values
-4. For `AUTH_HTPASSWD`, generate here: https://www.web2generators.com/apache-tools/htpasswd-generator (default is user=admin, password=admin)
+4. For `AUTH_HTPASSWD`, generate here: https://www.web2generators.com/apache-tools/htpasswd-generator (default is user=sudo, password=$apr1$25xeucad$7CVNQEODBjb/pLxm/xtLA0)
 5. Create the docker network: `docker network create proxy`
 6. Up the network with `make up`
 
