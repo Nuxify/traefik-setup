@@ -24,7 +24,7 @@ services:
       - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_API_URL}`)"
       - "traefik.http.middlewares.traefik-auth.basicauth.users=${AUTH_HTPASSWD}"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.traefik-ratelimit.ratelimit.average=30"
+      - "traefik.http.middlewares.traefik-ratelimit.ratelimit.average=100"
       - "traefik.http.middlewares.traefik-ratelimit.ratelimit.period=1m"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
       - "traefik.http.routers.traefik-secure.entrypoints=https"
