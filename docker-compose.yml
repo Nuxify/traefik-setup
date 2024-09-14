@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 services:
   traefik:
@@ -24,13 +24,10 @@ services:
       - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_API_URL}`)"
       - "traefik.http.middlewares.traefik-auth.basicauth.users=${AUTH_HTPASSWD}"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.traefik-ratelimit.ratelimit.average=100"
-      - "traefik.http.middlewares.traefik-ratelimit.ratelimit.period=1m"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
       - "traefik.http.routers.traefik-secure.entrypoints=https"
       - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_API_URL}`)"
       - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
-      - "traefik.http.routers.traefik-secure.middlewares=traefik-ratelimit"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=http"
       - "traefik.http.routers.traefik-secure.service=api@internal"
