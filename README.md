@@ -4,20 +4,48 @@ Cloud-native networking stack that just works.
 
 ## Setup
 
-1. Clone https://github.com/Nuxify/traefik-setup.git
+1. Clone:
+> <https://github.com/Nuxify/traefik-setup.git>
 
-2. Create `./data/acme.json` and add permission (chmod 600)
+2. Create `./data/acme.json`:
 
-3. Create `.env` (from .env.example) and provide correct values
+```bash
+touch ./data/acme.json
+```
 
-4. For `AUTH_HTPASSWD`, run `echo $(htpasswd -nb <username> <password>)` (default is user=sudo, password=2m4Bf48k2JbO5bnh26uwoeXa0dZ)
+3. Set read and write permission:
 
-5. Create the docker network: `docker network create proxy`
+```bash
+chmod 600 ./data/acme.json
+```
 
-6. Up the network with `make up`
+4. Create `.env` (from .env.example) and provide correct values:
 
-Refer to this good guide: https://medium.com/@containeroo/traefik-2-0-docker-a-simple-step-by-step-guide-e0be0c17cfa5
+```bash
+cp .env.example .env
+```
 
-Traefik documentation: https://doc.traefik.io/traefik/
+5. For `AUTH_HTPASSWD` run:
+
+```bash
+ echo $(htpasswd -nb <username> <password>)
+ # (default is user=sudo password=2m4Bf48k2JbO5bnh26uwoeXa0dZ)
+```
+
+6. Create the docker network:
+
+```bash
+docker network create proxy
+```
+
+7. Up the network with:
+
+```bash
+make up
+```
+
+Refer to this good guide: <https://medium.com/@containeroo/traefik-2-0-docker-a-simple-step-by-step-guide-e0be0c17cfa5>
+
+Traefik documentation: <https://doc.traefik.io/traefik/>
 
 Made with ❤️ at [Nuxify](https://nuxify.tech)
